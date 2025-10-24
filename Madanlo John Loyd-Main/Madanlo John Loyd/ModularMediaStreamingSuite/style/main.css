@@ -1,0 +1,348 @@
+/* -------------------------------------------
+   SPOTIFY BLACK & GREEN THEME — RESPONSIVE EDITION
+------------------------------------------- */
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font-family: 'Inter', sans-serif;
+    --bg-dark: #000000;
+    --panel-dark: #121212;
+    --text-light: #e0e0e0;
+    --text-muted: #9b9b9b;
+
+    --accent-green: #1DB954;
+    --accent-green-hover: #1ed760;
+    --accent-green-dark: #169c46;
+
+    --radius-main: 0.75rem;
+    --padding-main: 2rem;
+}
+
+/* BODY */
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-main);
+    overflow-x: hidden;
+}
+
+/* -------------------------------------------
+   HEADER
+------------------------------------------- */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(29, 185, 84, 0.25);
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.main-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.header-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.75rem;
+    stroke: var(--accent-green);
+    filter: drop-shadow(0 0 8px rgba(29, 185, 84, 0.8));
+}
+
+/* -------------------------------------------
+   MAIN GRID LAYOUT
+------------------------------------------- */
+.main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Laptop screens */
+@media (min-width: 1024px) {
+    .main-grid {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .player-column {
+        flex: 2;
+    }
+
+    .controls-panel {
+        flex: 1;
+        max-width: 400px;
+        position: sticky;
+        top: 2rem;
+        align-self: flex-start;
+    }
+}
+
+/* Large desktop and ultrawide screens */
+@media (min-width: 1600px) {
+    body {
+        padding: 3rem 5rem;
+    }
+
+    .main-grid {
+        gap: 3rem;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .controls-panel {
+        max-width: 450px;
+    }
+}
+
+/* -------------------------------------------
+   PLAYER CONTAINER
+------------------------------------------- */
+.player-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: var(--radius-main);
+    background: #000;
+    border: 2px solid var(--accent-green);
+    box-shadow: 0 0 15px rgba(29, 185, 84, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.player-container:hover {
+    transform: scale(1.01);
+    border-color: var(--accent-green-hover);
+}
+
+.media-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-main);
+    background-color: #000;
+}
+
+/* -------------------------------------------
+   CONTROLS PANEL
+------------------------------------------- */
+.controls-panel {
+    padding: 1.5rem;
+    background: var(--panel-dark);
+    border-radius: var(--radius-main);
+    box-shadow: 0 0 15px rgba(29, 185, 84, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.panel-title {
+    color: var(--accent-green);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(29, 185, 84, 0.3);
+    padding-bottom: 0.25rem;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.2rem;
+}
+
+/* -------------------------------------------
+   BUTTONS & SELECTS
+------------------------------------------- */
+.btn-source {
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+    font-weight: 600;
+    border-radius: var(--radius-main);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.25s ease;
+}
+
+.btn-source:hover {
+    background: var(--accent-green);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.form-select {
+    background: #0f0f0f;
+    color: var(--text-light);
+    border: 1px solid rgba(29, 185, 84, 0.4);
+    border-radius: var(--radius-main);
+    padding: 0.5rem;
+    width: 100%;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-select:hover, .form-select:focus {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+}
+
+/* -------------------------------------------
+   CHECKBOXES
+------------------------------------------- */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0.4rem 0.5rem;
+    border-radius: var(--radius-main);
+    transition: background 0.3s ease;
+}
+
+.checkbox-label:hover {
+    background: rgba(29, 185, 84, 0.1);
+}
+
+.checkbox-label input {
+    margin-right: 0.75rem;
+    accent-color: var(--accent-green);
+    transform: scale(1.2);
+}
+
+/* -------------------------------------------
+   PLAYLIST
+------------------------------------------- */
+.playlist-group {
+    background: #0f0f0f;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-main);
+    padding: 1rem;
+    box-shadow: inset 0 0 10px rgba(29, 185, 84, 0.1);
+    color: var(--text-light);
+    min-height: 150px;
+    overflow-y: auto;
+}
+
+.playlist-list:empty::before {
+    content: "No media loaded. Add a source to start.";
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    display: block;
+    padding: 1rem;
+}
+
+.playlist-item {
+    padding: 0.5rem;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.playlist-item:hover {
+    background: rgba(29, 185, 84, 0.08);
+    border-left: 3px solid var(--accent-green);
+}
+
+.playlist-item.active {
+    background: rgba(29, 185, 84, 0.12);
+    border-left: 3px solid var(--accent-green);
+    font-weight: 600;
+    color: var(--accent-green);
+}
+
+/* -------------------------------------------
+   SCROLLBAR
+------------------------------------------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green-hover);
+}
+
+/* -------------------------------------------
+   WATERMARK — FIXED TOP RIGHT
+------------------------------------------- */
+.watermark {
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 9999;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--accent-green);
+    opacity: 0.4;
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.6);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.watermark:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* -------------------------------------------
+   RESPONSIVE BREAKPOINTS
+------------------------------------------- */
+
+/* Smaller laptops */
+@media (max-width: 1366px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+    .controls-panel {
+        max-width: 350px;
+    }
+}
+
+/* Large monitors (1080p–1440p) */
+@media (min-width: 1920px) {
+    .main-grid {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+    .player-container {
+        padding-top: 50%;
+    }
+    .controls-panel {
+        max-width: 500px;
+        font-size: 1rem;
+    }
+    .main-title {
+        font-size: 2.2rem;
+    }
+}
