@@ -62,14 +62,14 @@ ModularMediaStreamingSuite/
 
 
 
-🚀 How to Run the Project
+## 🚀 How to Run the Project
 Because the Service Worker and media streaming APIs require an HTTP context,
 you must run the project on a local web server, not just open it by double-clicking.
 
 
 
 
-🧰 Option 1: Using Python (Quick Start)
+## 🧰 Option 1: Using Python (Quick Start)
 # Navigate to the project folder
 cd ModularMediaStreamingSuite
 
@@ -83,7 +83,7 @@ Then open your browser to:
 
 
 
-🧰 Option 2: Using Node.js (http-server)
+## 🧰 Option 2: Using Node.js (http-server)
 If you have Node.js installed:
 
 npm install -g http-server
@@ -95,7 +95,7 @@ Then open:
 
 
 
-🎥 Running the Demo
+## 🎥 Running the Demo
 Once opened in your browser:
 
 Choose a Media Source:
@@ -112,7 +112,7 @@ Enjoy playback and test modules dynamically.
 
 
 
-🧪 Testing
+## 🧪 Testing
 There are no automated tests — but you can manually test:
 
 Source modules (Local, HLS, Remote API)
@@ -128,7 +128,7 @@ Reload — cached assets and videos should still play (if cached).
 
 
 
-🧩 Notes
+## 🧩 Notes
 Service Worker won’t work if opened directly via file://
 Works best in Chrome, Edge, or Firefox
 Demo public MP4s are included in RemoteAPISource.js
